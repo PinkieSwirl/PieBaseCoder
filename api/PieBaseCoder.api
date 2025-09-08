@@ -1,0 +1,23 @@
+public final class eu/pieland/base128/Base128 {
+	public static final field INSTANCE Leu/pieland/base128/Base128;
+	public final fun decode ([BII)[B
+	public static synthetic fun decode$default (Leu/pieland/base128/Base128;[BIIILjava/lang/Object;)[B
+	public final fun encode ([BII)[B
+	public static synthetic fun encode$default (Leu/pieland/base128/Base128;[BIIILjava/lang/Object;)[B
+}
+
+public final class eu/pieland/base128/Base128$DecoderInputStream : java/io/InputStream {
+	public fun <init> (Ljava/io/InputStream;)V
+	public fun available ()I
+	public fun close ()V
+	public fun read ()I
+	public fun read ([BII)I
+}
+
+public final class eu/pieland/base128/Base128$EncoderOutputStream : java/io/FilterOutputStream {
+	public fun <init> (Ljava/io/OutputStream;)V
+	public fun flush ()V
+	public fun write (I)V
+	public fun write ([BII)V
+}
+
