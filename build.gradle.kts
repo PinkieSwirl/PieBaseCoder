@@ -65,13 +65,15 @@ jacoco {
 
 kotlin {
     jvmToolchain {
-        languageVersion.set(JavaLanguageVersion.of(24))
-        vendor.set(JvmVendorSpec.ADOPTIUM)
+        languageVersion = JavaLanguageVersion.of(24)
+        vendor = JvmVendorSpec.ADOPTIUM
     }
     compilerOptions {
         freeCompilerArgs = listOf(
             "-Xnullability-annotations=@org.jspecify.annotations:strict",
             "-Xemit-jvm-type-annotations", // Enable annotations on type variables
+            "-Xcontext-sensitive-resolution",
+            "-Xdata-flow-based-exhaustiveness",
         )
         progressiveMode = true
         javaParameters = true
