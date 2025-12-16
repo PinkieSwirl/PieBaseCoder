@@ -1,6 +1,6 @@
 plugins {
     kotlin("jvm")
-    id("io.gitlab.arturbosch.detekt")
+    id("dev.detekt")
     id("com.autonomousapps.dependency-analysis")
     jacoco
 }
@@ -22,15 +22,12 @@ repositories {
 }
 
 dependencies {
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-rules-libraries:$detektVersion")
+    detektPlugins("dev.detekt:detekt-rules-libraries:$detektVersion")
 
     testImplementation(kotlin("test:$kotlinVersion"))
-
-    testImplementation(platform("org.junit:junit-bom:$junitVersion"))
-    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
-
-    testImplementation("net.jqwik:jqwik-api:${jqwikVersion}")
-    testImplementation("net.jqwik:jqwik-kotlin:${jqwikVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
+    testImplementation("net.jqwik:jqwik-api:$jqwikVersion")
+    testImplementation("net.jqwik:jqwik-kotlin:$jqwikVersion")
 }
 
 tasks.test {
