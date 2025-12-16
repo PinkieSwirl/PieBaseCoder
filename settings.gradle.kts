@@ -4,7 +4,7 @@ pluginManagement {
         val detektVersion: String by settings
         val daVersion: String by settings
         kotlin("jvm") version kotlinVersion
-        id("io.gitlab.arturbosch.detekt") version detektVersion
+        id("dev.detekt") version detektVersion
         id("com.autonomousapps.dependency-analysis") version daVersion
     }
     repositories {
