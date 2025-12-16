@@ -61,14 +61,11 @@ jacoco {
 }
 
 kotlin {
-    jvmToolchain {
-        languageVersion = JavaLanguageVersion.of(25)
-        vendor = JvmVendorSpec.AZUL
-    }
+    jvmToolchain(21)
     compilerOptions {
         freeCompilerArgs = listOf(
             "-Xnullability-annotations=@org.jspecify.annotations:strict",
-            "-Xemit-jvm-type-annotations", // Enable annotations on type variables
+            "-Xemit-jvm-type-annotations",
             "-Xcontext-sensitive-resolution",
             "-Xdata-flow-based-exhaustiveness",
             "-Xcontext-parameters",
