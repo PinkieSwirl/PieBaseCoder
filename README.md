@@ -1,5 +1,6 @@
 [![codecov](https://codecov.io/gh/PinkieSwirl/PieBaseCoder/graph/badge.svg?token=A94L3MPYC9)](https://codecov.io/gh/PinkieSwirl/PieBaseCoder)
 ![Code QL](https://github.com/PinkieSwirl/PieBaseCoder/actions/workflows/codeql.yml/badge.svg)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FPinkieSwirl%2FPieBaseCoder.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FPinkieSwirl%2FPieBaseCoder?ref=badge_shield)
 
 # PieBaseCoder
 
@@ -29,3 +30,7 @@ This project uses Gradle with Kotlin. Clone the repository and build:
 ```bash
 ./gradlew build
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FPinkieSwirl%2FPieBaseCoder.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FPinkieSwirl%2FPieBaseCoder?ref=badge_large)
