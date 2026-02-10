@@ -1,6 +1,6 @@
 plugins {
     kotlin("jvm")
-    id("io.gitlab.arturbosch.detekt")
+    id("dev.detekt")
     id("com.autonomousapps.dependency-analysis")
     jacoco
 }
@@ -22,15 +22,12 @@ repositories {
 }
 
 dependencies {
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-rules-libraries:$detektVersion")
+    detektPlugins("dev.detekt:detekt-rules-libraries:$detektVersion")
 
     testImplementation(kotlin("test:$kotlinVersion"))
-
-    testImplementation(platform("org.junit:junit-bom:$junitVersion"))
-    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
-
-    testImplementation("net.jqwik:jqwik-api:${jqwikVersion}")
-    testImplementation("net.jqwik:jqwik-kotlin:${jqwikVersion}")
+    testImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
+    testImplementation("net.jqwik:jqwik-api:$jqwikVersion")
+    testImplementation("net.jqwik:jqwik-kotlin:$jqwikVersion")
 }
 
 tasks.test {
@@ -64,16 +61,15 @@ jacoco {
 }
 
 kotlin {
-    jvmToolchain {
-        languageVersion = JavaLanguageVersion.of(24)
-        vendor = JvmVendorSpec.ADOPTIUM
-    }
+    jvmToolchain(25)
     compilerOptions {
         freeCompilerArgs = listOf(
             "-Xnullability-annotations=@org.jspecify.annotations:strict",
-            "-Xemit-jvm-type-annotations", // Enable annotations on type variables
+            "-Xemit-jvm-type-annotations",
             "-Xcontext-sensitive-resolution",
             "-Xdata-flow-based-exhaustiveness",
+            "-Xcontext-parameters",
+            "-Xreturn-value-checker=full",
         )
         progressiveMode = true
         javaParameters = true
