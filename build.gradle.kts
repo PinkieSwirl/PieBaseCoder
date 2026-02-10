@@ -61,7 +61,7 @@ jacoco {
 }
 
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(25)
     compilerOptions {
         freeCompilerArgs = listOf(
             "-Xnullability-annotations=@org.jspecify.annotations:strict",
